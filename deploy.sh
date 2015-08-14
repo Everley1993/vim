@@ -10,7 +10,7 @@ git clone git@github.com:drwx/php-doc.vim.git
 git clone git@github.com:scrooloose/syntastic.git
 git clone git@github.com:vim-scripts/taglist.vim.git
 git clone git@github.com:fatih/vim-go.git #需在vim中运行 :GoInstallBinaries
-git clone git@github.com:nathanaelkane/vim-indent-guides.git
+git clone git@github.com:Yggdroot/indentLine.git
 git clone git@github.com:ianva/vim-youdao-translater.git
 git clone git@github.com:Valloric/YouCompleteMe.git && \
     cd ~/.vim/bundle/YouCompleteMe && \
