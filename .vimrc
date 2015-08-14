@@ -6,7 +6,7 @@ set number
 set cursorline
 set shiftwidth=4
 set tabstop=4
-autocmd FileType * set expandtab "单独设置set expandtab时对.go无效.这里在得知文件类型后才执行,就有效.
+set expandtab
 syntax enable
 colorscheme monokai
 set nobackup
