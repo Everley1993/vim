@@ -1,8 +1,5 @@
 call pathogen#infect()
 filetype plugin indent on
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-autocmd Filetype c   set omnifunc=ccomplete#Complete
-
 set number
 set cursorline
 set shiftwidth=4
@@ -72,42 +69,71 @@ function RunThisScript()
     endif
 endfunction
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " F5运行脚本
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <F5> <ESC>: call RunThisScript() <CR>
 
-" 设置NerdTree
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" NerdTree
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <F3> :NERDTreeToggle<CR>
 
-" 设置php-doc
+" php-doc
 inoremap <C-P> <ESC>:call PhpDocSingle()<CR>
 nnoremap <C-P> :call PhpDocSingle()<CR>
 vnoremap <C-P> :call PhpDocRange()<CR> 
 
-" 设置ctags
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ctags
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <C-y> <ESC>:tnext<CR>
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 标签页切换
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <F7> <ESC>:tabp<CR>
 map <F8> <ESC>:tabn<CR>
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 用空格替换tab
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <C-b> <ESC>:%s/\t/    /g<CR>
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 有道翻译
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <C-l> <Esc>:Ydc 
 noremap <leader>yd :Yde<CR>
 
-" omni补全
-imap <C-k> <C-x><C-o>
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" omni
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+imap <C-a> <C-x><C-o>
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+autocmd Filetype c   set omnifunc=ccomplete#Complete
+let OmniCpp_NamespaceSearch = 1
+let OmniCpp_GlobalScopeSearch = 1
+let OmniCpp_ShowAccess = 1
+let OmniCpp_ShowPrototypeInAbbr = 1 " 显示函数参数列表
+let OmniCpp_MayCompleteDot = 1   " 输入 .  后自动补全
+let OmniCpp_MayCompleteArrow = 1 " 输入 -> 后自动补全
+let OmniCpp_MayCompleteScope = 1 " 输入 :: 后自动补全
+let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
+" 自动关闭补全窗口
+"au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
+"set completeopt=menuone,menu,longest
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " taglist
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let Tlist_Show_One_File=1    "只显示当前文件的tags
 let Tlist_WinWidth=40        "设置taglist宽度
 let Tlist_Exit_OnlyWindow=1  "tagList窗口是最后一个窗口，则退出Vim
 let Tlist_Use_Right_Window=1 "在Vim窗口右侧显示taglist窗口
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" cscope setting
+" cscope
 " """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has("cscope")
     set csprg=/usr/bin/cscope
