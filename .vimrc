@@ -1,6 +1,7 @@
 call pathogen#infect()
 filetype plugin indent on
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+autocmd Filetype c   set omnifunc=ccomplete#Complete
 
 set number
 set cursorline
