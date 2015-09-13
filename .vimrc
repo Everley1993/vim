@@ -11,6 +11,7 @@ syntax enable
 colorscheme monokai
 set nobackup
 set backspace=indent,eol,start
+let mapleader = "," 
 
 function RunThisScript() 
     let file_name = expand("%:p")
@@ -104,19 +105,19 @@ let Tlist_WinWidth=40        "设置taglist宽度
 let Tlist_Exit_OnlyWindow=1  "tagList窗口是最后一个窗口，则退出Vim
 let Tlist_Use_Right_Window=1 "在Vim窗口右侧显示taglist窗口
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " cscope setting
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has("cscope")
-  set csprg=/usr/bin/cscope
-  set csto=1
-  set cst
-  set nocsverb
-  " add any database in current directory
-  if filereadable("cscope.out")
-      cs add cscope.out
-  endif
-  set csverb
+    set csprg=/usr/bin/cscope
+    set csto=1
+    set cst
+    set nocsverb
+    " add any database in current directory
+    if filereadable("cscope.out")
+        cs add cscope.out
+    endif
+    set csverb
 endif
 
 nmap <C-@>s :cs find s <C-R>=expand("<cword>")<CR><CR>
@@ -127,3 +128,14 @@ nmap <C-@>e :cs find e <C-R>=expand("<cword>")<CR><CR>
 nmap <C-@>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
 nmap <C-@>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
 nmap <C-@>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" YouCompleteMe
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+" 使用tags文件
+let g:ycm_collect_identifiers_from_tag_files = 1 
+nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nmap <F4> :YcmDiags<CR>
