@@ -1,6 +1,9 @@
 #!/bin/bash
 sudo apt-get install ctags
 sudo apt-get install cscope
+sudo apt-get install clang 
+sudo apt-get install cmake 
+sudo apt-get install python-dev 
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
     curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 cp ./.vimrc ~/.vimrc
@@ -16,4 +19,5 @@ git clone git@github.com:Yggdroot/indentLine.git
 git clone git@github.com:ianva/vim-youdao-translater.git
 git clone git@github.com:Valloric/YouCompleteMe.git && \
     cd ~/.vim/bundle/YouCompleteMe && \
-        ./install.sh --clang-completer --gocode-completer --omnisharp-completer
+        git submodule update --recursive && \
+        ./install.py --clang-completer --gocode-completer --omnisharp-completer
