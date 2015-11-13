@@ -176,3 +176,9 @@ nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nmap <F4> :YcmDiags<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" python-mode 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:syntastic_check_on_open = 1 
+map <c-r> <Esc>:PymodeLintAuto<CR>
