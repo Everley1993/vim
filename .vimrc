@@ -180,5 +180,6 @@ nmap <F4> :YcmDiags<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " python-mode 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:syntastic_check_on_open = 1 
+let g:syntastic_check_on_open = 1
+let g:pymode_rope = 0 
 map <c-r> <Esc>:PymodeLintAuto<CR>
