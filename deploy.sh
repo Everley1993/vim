@@ -4,6 +4,8 @@ sudo apt-get install cscope
 sudo apt-get install clang 
 sudo apt-get install cmake 
 sudo apt-get install python-dev 
+sudo apt-get install php-pear
+sudo pear install PHP_CodeSniffer
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
     curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 cp ./.vimrc ~/.vimrc
