@@ -22,5 +22,5 @@ git clone git@github.com:ianva/vim-youdao-translater.git
 git clone git@github.com:klen/python-mode.git
 git clone git@github.com:Valloric/YouCompleteMe.git && \
     cd ~/.vim/bundle/YouCompleteMe && \
-        git submodule update --recursive && \
+        git submodule update --init --recursive && \
         ./install.py --clang-completer --gocode-completer --omnisharp-completer
