@@ -1,4 +1,7 @@
 #!/bin/bash
+sudo apt-get install guake
+sudo apt-get install vim
+sudo apt-get install git
 sudo apt-get install ctags
 sudo apt-get install cscope
 sudo apt-get install clang 
@@ -24,3 +27,7 @@ git clone git@github.com:Valloric/YouCompleteMe.git && \
     cd ~/.vim/bundle/YouCompleteMe && \
         git submodule update --init --recursive && \
         ./install.py --clang-completer --gocode-completer --omnisharp-completer
+
+git config --global diff.tool vimdiff
+git config --global difftool.prompt false
+git config --global alias.d difftool
