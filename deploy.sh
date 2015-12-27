@@ -8,7 +8,9 @@ sudo apt-get install clang
 sudo apt-get install cmake 
 sudo apt-get install python-dev 
 sudo apt-get install php-pear
+sudo apt-get install pip
 sudo pear install PHP_CodeSniffer
+sudo pip install https://github.com/Rykka/instant-rst.py/archive/master.zip
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
     curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 cp ./.vimrc ~/.vimrc
@@ -24,6 +26,8 @@ git clone git@github.com:Yggdroot/indentLine.git
 git clone git@github.com:ianva/vim-youdao-translater.git
 git clone git@github.com:klen/python-mode.git
 git clone git@github.com:scrooloose/nerdcommenter.git
+git clone git@github.com:Rykka/riv.vim.git
+git clone git@github.com:Rykka/InstantRst.git
 git clone git@github.com:Valloric/YouCompleteMe.git && \
     cd ~/.vim/bundle/YouCompleteMe && \
         git submodule update --init --recursive && \
