@@ -23,6 +23,7 @@ git clone git@github.com:fatih/vim-go.git #需在vim中运行 :GoInstallBinaries
 git clone git@github.com:Yggdroot/indentLine.git
 git clone git@github.com:ianva/vim-youdao-translater.git
 git clone git@github.com:klen/python-mode.git
+git clone git@github.com:scrooloose/nerdcommenter.git
 git clone git@github.com:Valloric/YouCompleteMe.git && \
     cd ~/.vim/bundle/YouCompleteMe && \
         git submodule update --init --recursive && \
