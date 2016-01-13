@@ -1,5 +1,6 @@
 #!/bin/bash
 sudo add-apt-repository ppa:numix/ppa
+sudo add-apt-repository ppa:ricotz/docky
 sudo apt-get update
 sudo apt-get install numix-gtk-theme numix-icon-theme numix-icon-theme-circle numix-wallpaper-saucy
 sudo apt-get install unity-tweak-tool
