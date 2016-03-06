@@ -5,6 +5,8 @@ sudo apt-get install git
 sudo apt-get install ctags
 sudo apt-get install cscope
 sudo apt-get install clang 
+sudo apt-get install clang-format-3.7 
+sudo ln -s /usr/bin/clang-format-3.7 /usr/bin/clang-format
 sudo apt-get install cmake 
 sudo apt-get install python-dev 
 sudo apt-get install php-pear
@@ -28,6 +30,7 @@ git clone git@github.com:klen/python-mode.git
 git clone git@github.com:scrooloose/nerdcommenter.git
 git clone git@github.com:Rykka/riv.vim.git
 git clone git@github.com:Rykka/InstantRst.git
+git clone git@github.com:rhysd/vim-clang-format.git
 git clone git@github.com:Valloric/YouCompleteMe.git && \
     cd ~/.vim/bundle/YouCompleteMe && \
         git submodule update --init --recursive && \

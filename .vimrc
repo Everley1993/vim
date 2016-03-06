@@ -198,3 +198,8 @@ map <c-r> <Esc>:PymodeLintAuto<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ":InstantRst
 ":StopInstantRst
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" clang-format 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+au FileType c,h,cpp,objc ClangFormatAutoEnable
