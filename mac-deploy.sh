@@ -1,24 +1,17 @@
 #!/bin/bash
-sudo add-apt-repository ppa:numix/ppa
-sudo add-apt-repository ppa:ricotz/docky
-sudo apt-get update
-sudo apt-get install numix-gtk-theme numix-icon-theme numix-icon-theme-circle numix-wallpaper-saucy
-sudo apt-get install unity-tweak-tool
-sudo apt-get install plank
-sudo apt-get install guake
-sudo apt-get install vim
-sudo apt-get install git
-sudo apt-get install ctags
-sudo apt-get install cscope
-sudo apt-get install clang 
-sudo apt-get install clang-format-3.7 
-sudo ln -s /usr/bin/clang-format-3.7 /usr/bin/clang-format
-sudo apt-get install cmake 
-sudo apt-get install python-dev 
-sudo apt-get install php-pear
-sudo apt-get install pip
-sudo pear install PHP_CodeSniffer
-sudo pip install https://github.com/Rykka/instant-rst.py/archive/master.zip
+brew install git
+brew install ctags
+brew install cscope
+brew install cmake 
+brew install vim 
+cd /tmp/ && \
+	wget http://pear.php.net/go-pear.phar && \
+	php go-pear.phar && \	
+	ln -s /Users/li/pear/bin/pear /usr/local/bin/pear && \
+	pear install PHP_CodeSniffer
+brew install python && \
+	pip install https://github.com/Rykka/instant-rst.py/archive/master.zip && \
+    pip install requests
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
     curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 cp ./.vimrc ~/.vimrc

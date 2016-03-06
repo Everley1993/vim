@@ -200,6 +200,12 @@ map <c-r> <Esc>:PymodeLintAuto<CR>
 ":StopInstantRst
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" golint 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
+autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " clang-format 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 au FileType c,h,cpp,objc ClangFormatAutoEnable
