@@ -209,3 +209,8 @@ autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
 " clang-format 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 au FileType c,h,cpp,objc ClangFormatAutoEnable
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" gitgutter 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nmap <F7> :GitGutterLineHighlightsToggle<CR>
