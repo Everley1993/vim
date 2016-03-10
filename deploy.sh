@@ -39,6 +39,7 @@ git clone git@github.com:Rykka/InstantRst.git
 git clone git@github.com:rhysd/vim-clang-format.git
 git clone https://github.com/vim-airline/vim-airline
 git clone https://github.com/vim-airline/vim-airline-themes
+git clone git://github.com/airblade/vim-gitgutter.git
 git clone git@github.com:Valloric/YouCompleteMe.git && \
     cd ~/.vim/bundle/YouCompleteMe && \
         git submodule update --init --recursive && \
