@@ -31,7 +31,6 @@ git clone git@github.com:scrooloose/syntastic.git
 git clone git@github.com:vim-scripts/taglist.vim.git
 git clone git@github.com:fatih/vim-go.git #需在vim中运行 :GoInstallBinaries
 git clone git@github.com:Yggdroot/indentLine.git
-git clone git@github.com:ianva/vim-youdao-translater.git
 git clone git@github.com:klen/python-mode.git
 git clone git@github.com:scrooloose/nerdcommenter.git
 git clone git@github.com:Rykka/riv.vim.git
