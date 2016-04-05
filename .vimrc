@@ -10,6 +10,7 @@ colorscheme monokai
 set nobackup
 set backspace=indent,eol,start
 let mapleader = "," 
+set paste
 
 function RunThisScript() 
     let file_name = expand("%:p")
