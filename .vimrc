@@ -194,6 +194,7 @@ map <c-r> <Esc>:PymodeLintAuto<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ":InstantRst
 ":StopInstantRst
+let g:instant_rst_localhost_only = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " golint 
