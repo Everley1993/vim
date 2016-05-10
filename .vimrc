@@ -211,3 +211,14 @@ au FileType c,h,cpp,objc ClangFormatAutoEnable
 " gitgutter 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nmap <F7> :GitGutterLineHighlightsToggle<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 自动删除行尾的空格
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function RemoveSpaces()
+    let l:winview = winsaveview()
+    silent! %s/\s\+$//
+    call winrestview(l:winview)
+endfunction
+
+autocmd BufWritePre,FileAppendPre,FileWritePre,FilterWritePre * :call RemoveSpaces()
