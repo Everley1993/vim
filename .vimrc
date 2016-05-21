@@ -223,3 +223,9 @@ function RemoveSpaces()
 endfunction
 
 autocmd BufWritePre,FileAppendPre,FileWritePre,FilterWritePre * :call RemoveSpaces()
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" markdown
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:vim_markdown_frontmatter=1
+let g:vim_markdown_conceal = 0
