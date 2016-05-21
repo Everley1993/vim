@@ -11,11 +11,11 @@ sudo apt-get install vim
 sudo apt-get install git
 sudo apt-get install ctags
 sudo apt-get install cscope
-sudo apt-get install clang 
-sudo apt-get install clang-format-3.7 
+sudo apt-get install clang
+sudo apt-get install clang-format-3.7
 sudo ln -s /usr/bin/clang-format-3.7 /usr/bin/clang-format
-sudo apt-get install cmake 
-sudo apt-get install python-dev 
+sudo apt-get install cmake
+sudo apt-get install python-dev
 sudo apt-get install php-pear
 sudo apt-get install python-pip
 sudo pear install PHP_CodeSniffer
@@ -40,6 +40,8 @@ git clone git@github.com:rhysd/vim-clang-format.git
 git clone https://github.com/vim-airline/vim-airline
 git clone https://github.com/vim-airline/vim-airline-themes
 git clone git://github.com/airblade/vim-gitgutter.git
+git clone https://github.com/plasticboy/vim-markdown.git
+git clone git://github.com/godlygeek/tabular.git
 git clone git@github.com:Valloric/YouCompleteMe.git && \
     cd ~/.vim/bundle/YouCompleteMe && \
         git submodule update --init --recursive && \

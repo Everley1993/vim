@@ -9,14 +9,15 @@ syntax enable
 colorscheme monokai
 set nobackup
 set backspace=indent,eol,start
-let mapleader = "," 
+let mapleader = ","
+set encoding=utf-8
 set paste
 
-function RunThisScript() 
+function RunThisScript()
     let file_name = expand("%:p")
     let file_ext = expand("%:e")
     let file_cmd = ""
- 
+
     "python 直接调用
     if file_ext == "py"
         let file_cmd = '/usr/bin/python'
@@ -30,7 +31,7 @@ function RunThisScript()
         if strpart(file_first_line, 0, 2) == '//'
             let file_arg = strpart(file_first_line, 2) "提取参数
         endif
-        let file_output_file = strpart(file_name, 0, strridx(file_name, '.c')) 
+        let file_output_file = strpart(file_name, 0, strridx(file_name, '.c'))
         let file_args = ' -o '. file_output_file .' '.  file_name . ' '. file_arg .' && '. file_output_file "将参数附加到编译命令之后
         let file_cmd = '/usr/bin/cc'
     "php 直接调用
@@ -57,7 +58,7 @@ function RunThisScript()
     else
         echo "错误: 没有任何编译器匹配此文件类型, 请确认您的文件扩展名!"
     endif
- 
+
     if file_cmd != ""
         if ! executable(file_cmd)
             echo file_cmd
@@ -65,7 +66,7 @@ function RunThisScript()
         else
             let cmd = "! ". file_cmd . ' ' . file_args
             "echo "执行命令: ". cmd
-            exec cmd 
+            exec cmd
         endif
     endif
 endfunction
@@ -83,7 +84,7 @@ map <F3> :NERDTreeToggle<CR>
 " php-doc
 inoremap <C-P> <ESC>:call PhpDocSingle()<CR>
 nnoremap <C-P> :call PhpDocSingle()<CR>
-vnoremap <C-P> :call PhpDocRange()<CR> 
+vnoremap <C-P> :call PhpDocRange()<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ctags
@@ -104,7 +105,7 @@ map <C-b> <ESC>:%s/\t/    /g<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 有道翻译
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <leader>t <Esc>:Ydc 
+map <leader>t <Esc>:Ydc
 noremap <leader>yd :Yde<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -167,48 +168,48 @@ nmap <C-@>d :cs find d <C-R>=expand("<cword>")<CR><CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 " 使用tags文件
-let g:ycm_collect_identifiers_from_tag_files = 1 
+let g:ycm_collect_identifiers_from_tag_files = 1
 nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nmap <F4> :YcmDiags<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" python-mode 
+" python-mode
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:syntastic_check_on_open = 1
-let g:pymode_rope = 0 
+let g:pymode_rope = 0
 map <c-r> <Esc>:PymodeLintAuto<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " nerdcommenter
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"<leader>cc         注释当前行和选中行  
-"<leader>c<空格>    如果被选区域有部分被注释，则对被选区域执行取消注释操作，其它情况执行反转注释操作  
-"<leader>cm         对被选区域用`一对`注释符进行注释，前面的注释对每一行都会添加注释  
-"<leader>ci         执行反转注释操作，选中区域注释部分取消注释，非注释部分添加注释  
-"<leader>cu         取消注释  
+"<leader>cc         注释当前行和选中行
+"<leader>c<空格>    如果被选区域有部分被注释，则对被选区域执行取消注释操作，其它情况执行反转注释操作
+"<leader>cm         对被选区域用`一对`注释符进行注释，前面的注释对每一行都会添加注释
+"<leader>ci         执行反转注释操作，选中区域注释部分取消注释，非注释部分添加注释
+"<leader>cu         取消注释
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" InstantRst 
+" InstantRst
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ":InstantRst
 ":StopInstantRst
 let g:instant_rst_localhost_only = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" golint 
+" golint
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
 autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" clang-format 
+" clang-format
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 au FileType c,h,cpp,objc ClangFormatAutoEnable
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" gitgutter 
+" gitgutter
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nmap <F7> :GitGutterLineHighlightsToggle<CR>
 
