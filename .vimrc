@@ -111,7 +111,13 @@ noremap <leader>yd :Yde<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 格式化php代码
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <c-f> <Esc>:%!phpcbf<CR>
+function Phpcbf()
+    let l:winview = winsaveview()
+    silent! %!phpcbf
+    call winrestview(l:winview)
+endfunction
+
+command! -bar PhpFmt call Phpcbf()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " omni
