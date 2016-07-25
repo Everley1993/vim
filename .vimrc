@@ -12,6 +12,7 @@ set backspace=indent,eol,start
 let mapleader = ","
 set encoding=utf-8
 set paste
+set wrap
 
 function RunThisScript()
     let file_name = expand("%:p")
