@@ -2,11 +2,11 @@
 brew install git
 brew install ctags
 brew install cscope
-brew install cmake 
-brew install vim 
+brew install cmake
+brew install vim
 cd /tmp/ && \
 	wget http://pear.php.net/go-pear.phar && \
-	php go-pear.phar && \	
+	php go-pear.phar && \
 	ln -s /Users/li/pear/bin/pear /usr/local/bin/pear && \
 	pear install PHP_CodeSniffer
 brew install python && \
@@ -33,6 +33,9 @@ git clone git@github.com:rhysd/vim-clang-format.git
 git clone https://github.com/vim-airline/vim-airline
 git clone https://github.com/vim-airline/vim-airline-themes
 git clone git://github.com/airblade/vim-gitgutter.git
+git clone https://github.com/plasticboy/vim-markdown.git
+git clone git://github.com/godlygeek/tabular.git
+git clone git@github.com:Chiel92/vim-autoformat.git
 git clone git@github.com:Valloric/YouCompleteMe.git && \
     cd ~/.vim/bundle/YouCompleteMe && \
         git submodule update --init --recursive && \

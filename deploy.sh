@@ -42,6 +42,7 @@ git clone https://github.com/vim-airline/vim-airline-themes
 git clone git://github.com/airblade/vim-gitgutter.git
 git clone https://github.com/plasticboy/vim-markdown.git
 git clone git://github.com/godlygeek/tabular.git
+git clone git@github.com:Chiel92/vim-autoformat.git
 git clone git@github.com:Valloric/YouCompleteMe.git && \
     cd ~/.vim/bundle/YouCompleteMe && \
         git submodule update --init --recursive && \
