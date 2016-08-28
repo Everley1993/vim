@@ -213,6 +213,9 @@ autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " clang-format
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:clang_format#style_options = {
+            \ "UseTab" : "Never",
+			\ }
 au FileType c,h,cpp,objc ClangFormatAutoEnable
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
