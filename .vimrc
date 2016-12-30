@@ -243,6 +243,13 @@ let g:vim_markdown_json_frontmatter = 1
 let g:vim_markdown_conceal = 0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" markdown
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" :MarkdownPreview
+" :MarkdownPreviewStop
+let g:mkdp_path_to_chrome = "open"
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " autoformat
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 noremap <F9> :Autoformat<CR>
