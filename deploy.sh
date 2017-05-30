@@ -25,27 +25,27 @@ mkdir -p ~/.vim/autoload ~/.vim/bundle && \
 cp ./.vimrc ~/.vimrc
 cp -r ./colors ~/.vim/
 cd ~/.vim/bundle
-git clone git@github.com:Valloric/ListToggle.git
-git clone git@github.com:scrooloose/nerdtree.git
-git clone git@github.com:drwx/php-doc.vim.git
-git clone git@github.com:scrooloose/syntastic.git
-git clone git@github.com:vim-scripts/taglist.vim.git
-git clone git@github.com:fatih/vim-go.git #需在vim中运行 :GoInstallBinaries
-git clone git@github.com:Yggdroot/indentLine.git
-git clone git@github.com:klen/python-mode.git
-git clone git@github.com:scrooloose/nerdcommenter.git
-git clone git@github.com:Rykka/riv.vim.git
-git clone git@github.com:Rykka/InstantRst.git
-git clone git@github.com:rhysd/vim-clang-format.git
+git clone https://github.com/Valloric/ListToggle.git
+git clone https://github.com/scrooloose/nerdtree.git
+git clone https://github.com/drwx/php-doc.vim.git
+git clone https://github.com/scrooloose/syntastic.git
+git clone https://github.com/vim-scripts/taglist.vim.git
+git clone https://github.com/fatih/vim-go.git #需在vim中运行 :GoInstallBinaries
+git clone https://github.com/Yggdroot/indentLine.git
+git clone https://github.com/klen/python-mode.git
+git clone https://github.com/scrooloose/nerdcommenter.git
+git clone https://github.com/Rykka/riv.vim.git
+git clone https://github.com/Rykka/InstantRst.git
+git clone https://github.com/rhysd/vim-clang-format.git
 git clone https://github.com/vim-airline/vim-airline
 git clone https://github.com/vim-airline/vim-airline-themes
-git clone git://github.com/airblade/vim-gitgutter.git
+git clone https://github.com/airblade/vim-gitgutter.git
 git clone https://github.com/plasticboy/vim-markdown.git
-git clone git://github.com/godlygeek/tabular.git
-git clone git@github.com:Chiel92/vim-autoformat.git
-git clone git@github.com:iamcco/markdown-preview.vim.git
-git clone git@github.com:iamcco/mathjax-support-for-mkdp.git
-git clone git@github.com:Valloric/YouCompleteMe.git && \
+git clone https://github.com/godlygeek/tabular.git
+git clone https://github.com/Chiel92/vim-autoformat.git
+git clone https://github.com/iamcco/markdown-preview.vim.git
+git clone https://github.com/iamcco/mathjax-support-for-mkdp.git
+git clone https://github.com/Valloric/YouCompleteMe.git && \
     cd ~/.vim/bundle/YouCompleteMe && \
         git submodule update --init --recursive && \
         ./install.py --clang-completer --gocode-completer --omnisharp-completer
