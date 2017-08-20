@@ -18,7 +18,6 @@ set wrap
 " Install - git clone https://github.com/Shougo/neocomplete.vim.git ~/.vim/bundle/neocomplete.vim
 "         - ubuntu: sudo apt-get install vim-nox
 "         - mac: brew cask install macvim --with-cscope --with-lua
-" let g:acp_enableAtStartup = 1
 " Notice  - :set paste would disable neocomplete
 let g:neocomplete#enable_at_startup = 1
 
