@@ -74,6 +74,9 @@ let g:vim_markdown_conceal = 0
 " Install - git clone https://github.com/xuhdev/SingleCompile.git ~/.vim/bundle/SingleCompile
 map <F5> <ESC>:SCCompileRun<CR>
 
+" Plugin  - Tagbar
+" Install - git clone https://github.com/majutsushi/tagbar.git ~/.vim/bundle/tagbar
+nmap <F8> :TagbarToggle<CR>
 
 " replace space with tabs
 map <C-b> <ESC>:%s/\t/    /g<CR>
