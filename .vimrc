@@ -126,14 +126,19 @@ command! -bar PhpFmt call Phpcbf()
 imap <C-a> <C-x><C-o>
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd Filetype c   set omnifunc=ccomplete#Complete
-let OmniCpp_NamespaceSearch = 1
-let OmniCpp_GlobalScopeSearch = 1
-let OmniCpp_ShowAccess = 1
-let OmniCpp_ShowPrototypeInAbbr = 1 " 显示函数参数列表
-let OmniCpp_MayCompleteDot = 1   " 输入 .  后自动补全
-let OmniCpp_MayCompleteArrow = 1 " 输入 -> 后自动补全
-let OmniCpp_MayCompleteScope = 1 " 输入 :: 后自动补全
-let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
+autocmd FileType go call sacp#enableForThisBuffer({ "matches": [
+				\ { '=~': '\v[a-zA-Z]{4}$' , 'feedkeys': "\<C-x>\<C-n>"} ,
+				\ { '=~': '\.$'            , 'feedkeys': "\<C-x>\<C-o>", "ignoreCompletionMode":1} ,
+				\ ]
+				\ })
+"let OmniCpp_NamespaceSearch = 1
+"let OmniCpp_GlobalScopeSearch = 1
+"let OmniCpp_ShowAccess = 1
+"let OmniCpp_ShowPrototypeInAbbr = 1 " 显示函数参数列表
+"let OmniCpp_MayCompleteDot = 1   " 输入 .  后自动补全
+"let OmniCpp_MayCompleteArrow = 1 " 输入 -> 后自动补全
+"let OmniCpp_MayCompleteScope = 1 " 输入 :: 后自动补全
+"let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 " 自动关闭补全窗口
 "au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 "set completeopt=menuone,menu,longest
@@ -208,14 +213,14 @@ let g:instant_rst_localhost_only = 1
 " golint
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
-autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
+"autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " clang-format
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:clang_format#style_options = {
             \ "UseTab" : "Never",
-			\ }
+            \ }
 au FileType c,h,cpp,objc ClangFormatAutoEnable
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -247,7 +252,7 @@ let g:vim_markdown_conceal = 0
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " :MarkdownPreview
 " :MarkdownPreviewStop
-let g:mkdp_path_to_chrome = "open"
+let g:mkdp_path_to_chrome = "/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " autoformat
