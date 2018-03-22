@@ -78,6 +78,13 @@ map <F5> <ESC>:SCCompileRun<CR>
 " Install - git clone https://github.com/majutsushi/tagbar.git ~/.vim/bundle/tagbar
 nmap <F8> :TagbarToggle<CR>
 
+" Plugin  - vim-jsbeautify
+" Install - git clone https://github.com/maksimr/vim-jsbeautify.git ~/.vim/bundle/vim-jsbeautify && cd ~/.vim/bundle/vim-jsbeautify && git submodule update --init --recursive
+autocmd BufWritePre,FileAppendPre,FileWritePre,FilterWritePre *.js   :call JsBeautify()
+autocmd BufWritePre,FileAppendPre,FileWritePre,FilterWritePre *.json :call JsonBeautify()
+autocmd BufWritePre,FileAppendPre,FileWritePre,FilterWritePre *.html :call HtmlBeautify()
+autocmd BufWritePre,FileAppendPre,FileWritePre,FilterWritePre *.css  :call CSSBeautify()
+
 " replace space with tabs
 map <C-b> <ESC>:%s/\t/    /g<CR>
 
