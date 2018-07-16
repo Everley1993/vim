@@ -85,6 +85,9 @@ autocmd BufWritePre,FileAppendPre,FileWritePre,FilterWritePre *.json :call JsonB
 autocmd BufWritePre,FileAppendPre,FileWritePre,FilterWritePre *.html :call HtmlBeautify()
 autocmd BufWritePre,FileAppendPre,FileWritePre,FilterWritePre *.css  :call CSSBeautify()
 
+" Plugin  - typescript-vim
+" Install - git clone https://github.com/leafgarland/typescript-vim.git ~/.vim/bundle/typescript-vim
+
 " replace space with tabs
 map <C-b> <ESC>:%s/\t/    /g<CR>
 
