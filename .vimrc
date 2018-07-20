@@ -60,6 +60,10 @@ if !exists('g:neocomplete#force_omni_input_patterns')
 endif
 let g:neocomplete#force_omni_input_patterns.python = '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
 
+" Plugin  - vim-flake8
+" Install - git clone https://github.com/nvie/vim-flake8.git ~/.vim/bundle/vim-flake8
+autocmd BufWritePost *.py call Flake8()
+
 " Plugin  - Vim Markdown
 " Install - git clone https://github.com/godlygeek/tabular.git ~/.vim/bundle/tabular
 " Install - git clone https://github.com/plasticboy/vim-markdown.git ~/.vim/bundle/vim-markdown
