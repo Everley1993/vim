@@ -60,9 +60,18 @@ if !exists('g:neocomplete#force_omni_input_patterns')
 endif
 let g:neocomplete#force_omni_input_patterns.python = '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
 
-" Plugin  - vim-flake8
-" Install - git clone https://github.com/nvie/vim-flake8.git ~/.vim/bundle/vim-flake8
-autocmd BufWritePost *.py call Flake8()
+" Plugin  - syntastic
+" Install - git clone https://github.com/vim-syntastic/syntastic.git ~/.vim/bundle/syntastic
+"         - python - sudo pip install flake8
+"         - js     - npm install -g eslint
+" Usage   - :SyntasticInfo see syntastic's idea of available checkers
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " Plugin  - Vim Markdown
 " Install - git clone https://github.com/godlygeek/tabular.git ~/.vim/bundle/tabular
