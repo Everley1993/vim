@@ -95,7 +95,7 @@ let g:syntastic_python_checkers = ['pep8']
 
 " Plugin  - vim-autoformat
 " Install - git clone https://github.com/Chiel92/vim-autoformat.git ~/.vim/bundle/vim-autoformat
-"         - python           - sudo apt-get install python-autopep8
+"         - python           - sudo pip install yapf 
 "         - js/css/html/json - npm install -g js-beautify
 "         - typescript       - npm install -g typescript-formatter
 "         - shell            - go get -u mvdan.cc/sh/cmd/shfmt
