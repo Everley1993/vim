@@ -81,7 +81,7 @@ nmap <F8> :TagbarToggle<CR>
 
 " Plugin  - syntastic
 " Install - git clone https://github.com/vim-syntastic/syntastic.git ~/.vim/bundle/syntastic
-"         - python - sudo pip install flake8
+"         - python - sudo pip install yapf
 "         - js     - npm install -g eslint
 " Usage   - :SyntasticInfo see syntastic's idea of available checkers
 set statusline+=%#warningmsg#
@@ -100,6 +100,7 @@ let g:syntastic_python_checkers = ['pep8']
 "         - typescript       - npm install -g typescript-formatter
 "         - shell            - go get -u mvdan.cc/sh/cmd/shfmt
 au BufWrite * :Autoformat
+let g:formatter_yapf_style = 'pep8'
 
 " replace space with tabs
 map <C-b> <ESC>:%s/\t/    /g<CR>
