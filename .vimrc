@@ -100,6 +100,9 @@ let g:syntastic_python_checkers = ['pep8']
 "         - typescript       - npm install -g typescript-formatter
 "         - shell            - go get -u mvdan.cc/sh/cmd/shfmt
 au BufWrite * :Autoformat
+let g:autoformat_autoindent = 0
+let g:autoformat_retab = 0
+let g:autoformat_remove_trailing_spaces = 0
 let g:formatter_yapf_style = 'pep8'
 
 " replace space with tabs
