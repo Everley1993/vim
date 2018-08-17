@@ -13,6 +13,7 @@ set backspace=indent,eol,start
 let mapleader = ","
 set encoding=utf-8
 set wrap
+autocmd FileType html,xhtml,xml,css,javascript setlocal expandtab shiftwidth=2 tabstop=2
 
 " Plugin  - neocomplete
 " Install - git clone https://github.com/Shougo/neocomplete.vim.git ~/.vim/bundle/neocomplete.vim
@@ -53,25 +54,12 @@ let g:indent_guides_enable_on_vim_startup = 0
 " Plugin  - jedi-vim
 " Install - git clone --recursive https://github.com/davidhalter/jedi-vim.git ~/.vim/bundle/jedi-vim
 autocmd FileType python setlocal omnifunc=jedi#completions
-let g:jedi#completions_enabled = 0
-let g:jedi#auto_vim_configuration = 0
+let g:jedi#completions_enabled = 1
+let g:jedi#auto_vim_configuration = 1
 if !exists('g:neocomplete#force_omni_input_patterns')
-        let g:neocomplete#force_omni_input_patterns = {}
+    let g:neocomplete#force_omni_input_patterns = {}
 endif
 let g:neocomplete#force_omni_input_patterns.python = '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
-
-" Plugin  - syntastic
-" Install - git clone https://github.com/vim-syntastic/syntastic.git ~/.vim/bundle/syntastic
-"         - python - sudo pip install flake8
-"         - js     - npm install -g eslint
-" Usage   - :SyntasticInfo see syntastic's idea of available checkers
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 
 " Plugin  - Vim Markdown
 " Install - git clone https://github.com/godlygeek/tabular.git ~/.vim/bundle/tabular
@@ -91,15 +79,27 @@ map <F5> <ESC>:SCCompileRun<CR>
 " Install - git clone https://github.com/majutsushi/tagbar.git ~/.vim/bundle/tagbar
 nmap <F8> :TagbarToggle<CR>
 
-" Plugin  - vim-jsbeautify
-" Install - git clone https://github.com/maksimr/vim-jsbeautify.git ~/.vim/bundle/vim-jsbeautify && cd ~/.vim/bundle/vim-jsbeautify && git submodule update --init --recursive
-autocmd BufWritePre,FileAppendPre,FileWritePre,FilterWritePre *.js   :call JsBeautify()
-autocmd BufWritePre,FileAppendPre,FileWritePre,FilterWritePre *.json :call JsonBeautify()
-autocmd BufWritePre,FileAppendPre,FileWritePre,FilterWritePre *.html :call HtmlBeautify()
-autocmd BufWritePre,FileAppendPre,FileWritePre,FilterWritePre *.css  :call CSSBeautify()
+" Plugin  - syntastic
+" Install - git clone https://github.com/vim-syntastic/syntastic.git ~/.vim/bundle/syntastic
+"         - python - sudo pip install flake8
+"         - js     - npm install -g eslint
+" Usage   - :SyntasticInfo see syntastic's idea of available checkers
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_python_checkers = ['pep8']
 
-" Plugin  - typescript-vim
-" Install - git clone https://github.com/leafgarland/typescript-vim.git ~/.vim/bundle/typescript-vim
+" Plugin  - vim-autoformat
+" Install - git clone https://github.com/Chiel92/vim-autoformat.git ~/.vim/bundle/vim-autoformat
+"         - python           - sudo apt-get install python-autopep8
+"         - js/css/html/json - npm install -g js-beautify
+"         - typescript       - npm install -g typescript-formatter
+"         - shell            - go get -u mvdan.cc/sh/cmd/shfmt
+au BufWrite * :Autoformat
 
 " replace space with tabs
 map <C-b> <ESC>:%s/\t/    /g<CR>
