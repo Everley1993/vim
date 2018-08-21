@@ -92,6 +92,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['pep8']
+let g:syntastic_go_checkers = ['gofmt']
 
 " Plugin  - vim-autoformat
 " Install - git clone https://github.com/Chiel92/vim-autoformat.git ~/.vim/bundle/vim-autoformat
