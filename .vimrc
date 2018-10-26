@@ -1,3 +1,6 @@
+" Plugin  - pathogen
+" Install - mkdir -p ~/.vim/autoload ~/.vim/bundle && curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
@@ -18,7 +21,7 @@ autocmd FileType html,xhtml,xml,css,javascript setlocal expandtab shiftwidth=2 t
 " Plugin  - neocomplete
 " Install - git clone https://github.com/Shougo/neocomplete.vim.git ~/.vim/bundle/neocomplete.vim
 "         - ubuntu: sudo apt-get install vim-nox
-"         - mac: brew install macvim --with-cscope --with-lua --override-system-vim 
+"         - mac: brew install macvim --with-cscope --with-lua --override-system-vim
 " Notice  - :set paste would disable neocomplete
 let g:neocomplete#enable_at_startup = 1
 
@@ -97,7 +100,7 @@ let g:syntastic_java_checkers = []
 
 " Plugin  - vim-autoformat
 " Install - git clone https://github.com/Chiel92/vim-autoformat.git ~/.vim/bundle/vim-autoformat
-"         - python           - sudo pip install yapf 
+"         - python           - sudo pip install yapf
 "         - js/css/html/json - sudo npm install -g js-beautify
 "         - typescript       - sudo npm install -g typescript-formatter
 "         - shell            - go get -u mvdan.cc/sh/cmd/shfmt
