@@ -98,8 +98,8 @@ let g:syntastic_java_checkers = []
 " Plugin  - vim-autoformat
 " Install - git clone https://github.com/Chiel92/vim-autoformat.git ~/.vim/bundle/vim-autoformat
 "         - python           - sudo pip install yapf 
-"         - js/css/html/json - npm install -g js-beautify
-"         - typescript       - npm install -g typescript-formatter
+"         - js/css/html/json - sudo npm install -g js-beautify
+"         - typescript       - sudo npm install -g typescript-formatter
 "         - shell            - go get -u mvdan.cc/sh/cmd/shfmt
 au BufWrite * :Autoformat
 let g:autoformat_autoindent = 0
