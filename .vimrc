@@ -21,7 +21,7 @@ autocmd FileType html,xhtml,xml,css,javascript setlocal expandtab shiftwidth=2 t
 " Plugin  - neocomplete
 " Install - git clone https://github.com/Shougo/neocomplete.vim.git ~/.vim/bundle/neocomplete.vim
 "         - ubuntu: sudo apt-get install vim-nox
-"         - mac: brew install macvim --with-cscope --with-lua --override-system-vim
+"         - mac: brew install macvim --with-lua --with-override-system-vim
 " Notice  - :set paste would disable neocomplete
 let g:neocomplete#enable_at_startup = 1
 
