@@ -84,7 +84,7 @@ nmap <F8> :TagbarToggle<CR>
 
 " Plugin  - syntastic
 " Install - git clone https://github.com/vim-syntastic/syntastic.git ~/.vim/bundle/syntastic
-"         - python - sudo pip install yapf
+"         - python - sudo pip install flake8
 "         - js     - sudo npm install -g eslint
 " Usage   - :SyntasticInfo see syntastic's idea of available checkers
 set statusline+=%#warningmsg#
