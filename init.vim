@@ -91,7 +91,7 @@ Plug 'flazz/vim-colorschemes'
 
 " Plugin       - vim-css-color
 " Repository   - https://github.com/ap/vim-css-color
-Plug 'flazz/vim-colorschemes'
+Plug 'ap/vim-css-color'
 call plug#end()
 
 " basic
