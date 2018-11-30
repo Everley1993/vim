@@ -88,6 +88,10 @@ Plug 'Chiel92/vim-autoformat'
 " Plugin       - vim-colorschemes
 " Repository   - https://github.com/flazz/vim-colorschemes
 Plug 'flazz/vim-colorschemes'
+
+" Plugin       - vim-css-color
+" Repository   - https://github.com/ap/vim-css-color
+Plug 'flazz/vim-colorschemes'
 call plug#end()
 
 " basic
