@@ -84,6 +84,10 @@ Plug 'vim-syntastic/syntastic'
 "                typescript       - sudo npm install -g typescript-formatter
 "                shell            - go get -u mvdan.cc/sh/cmd/shfmt
 Plug 'Chiel92/vim-autoformat'
+
+" Plugin       - vim-colorschemes
+" Repository   - https://github.com/flazz/vim-colorschemes
+Plug 'flazz/vim-colorschemes'
 call plug#end()
 
 " basic
@@ -95,7 +99,6 @@ set shiftwidth=4
 set tabstop=4
 set expandtab
 syntax enable
-colorscheme monokai
 set nobackup
 set backspace=indent,eol,start
 let mapleader = ","
@@ -142,6 +145,9 @@ let g:autoformat_autoindent = 0
 let g:autoformat_retab = 0
 let g:autoformat_remove_trailing_spaces = 0
 let g:formatter_yapf_style = 'pep8'
+
+" vim-colorschemes
+colorscheme monokai
 
 " replace space with tabs
 map <C-b> <ESC>:%s/\t/    /g<CR>
