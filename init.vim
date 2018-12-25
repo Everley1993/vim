@@ -142,6 +142,7 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['pep8']
 let g:syntastic_go_checkers = ['gofmt']
 let g:syntastic_java_checkers = []
+let g:syntastic_html_checkers = ['eslint']
 
 " vim-autoformat
 au BufWrite * :Autoformat
