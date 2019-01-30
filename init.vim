@@ -92,6 +92,11 @@ Plug 'flazz/vim-colorschemes'
 " Plugin       - vim-css-color
 " Repository   - https://github.com/ap/vim-css-color
 Plug 'ap/vim-css-color'
+
+" Plugin       - dash.vim
+" Repository   - https://github.com/rizzatti/dash.vim
+Plug 'rizzatti/dash.vim'
+
 call plug#end()
 
 " basic
@@ -153,6 +158,9 @@ let g:formatter_yapf_style = 'pep8'
 
 " vim-colorschemes
 colorscheme monokai
+
+" dash.vim
+map <C-d> <ESC>:Dash<CR>
 
 " replace space with tabs
 map <C-b> <ESC>:%s/\t/    /g<CR>
