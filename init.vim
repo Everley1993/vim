@@ -145,6 +145,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['pep8']
+let g:syntastic_python_pep8_args = "--max-line-length=9999"
 let g:syntastic_go_checkers = ['gofmt']
 let g:syntastic_java_checkers = []
 let g:syntastic_html_checkers = ['eslint']
