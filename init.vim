@@ -83,6 +83,7 @@ Plug 'vim-syntastic/syntastic'
 "                js/css/html/json - sudo npm install -g js-beautify
 "                typescript       - sudo npm install -g typescript-formatter
 "                shell            - go get -u mvdan.cc/sh/cmd/shfmt
+"                sql              - pip3 install sqlparse
 Plug 'Chiel92/vim-autoformat'
 
 " Plugin       - vim-colorschemes
