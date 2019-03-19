@@ -1,7 +1,106 @@
-" Plugin  - pathogen
-" Install - mkdir -p ~/.vim/autoload ~/.vim/bundle && curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+" Requirements - curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+call plug#begin('~/.local/share/nvim/plugged')
+" Plugin       - deoplete.nvim
+" Repository   - https://github.com/Shougo/deoplete.nvim
+" Requirements - sudo pip3 install neovim
+"              - git clone https://github.com/neovim/python-client.git && cd python-client && sudo pip3 install .
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
-execute pathogen#infect()
+" Plugin       - vim-go
+" Repository   - https://github.com/fatih/vim-go
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+
+" Plugin       - deoplete-go
+" Repository   - https://github.com/zchee/deoplete-go
+Plug 'zchee/deoplete-go', { 'do': 'make'}
+
+" Plugin       - deoplete-jedi
+" Repository   - https://github.com/zchee/deoplete-jedi
+" Requirements - sudo pip3 install jedi
+Plug 'zchee/deoplete-jedi'
+
+" Plugin       - deoplete-ternjs
+" Repository   - https://github.com/carlitux/deoplete-ternjs
+" Requirements - sudo npm install -g tern
+Plug 'carlitux/deoplete-ternjs'
+
+" Plugin       - ack
+" Repository   - https://github.com/mileszs/ack.vim
+" Usage        - :Ack [options] {pattern} [{directories}]
+Plug 'mileszs/ack.vim'
+
+" Plugin       - nerdtree
+" Repository   - https://github.com/scrooloose/nerdtree
+Plug 'scrooloose/nerdtree'
+
+" Plugin       - nerdcommenter
+" Repository   - https://github.com/scrooloose/nerdcommenter
+Plug 'scrooloose/nerdcommenter'
+
+" Plugin       - ctrlp.vim
+" Repository   - https://github.com/ctrlpvim/ctrlp.vim
+Plug 'ctrlpvim/ctrlp.vim'
+
+" Plugin       - airline
+" Repository   - https://github.com/vim-airline/vim-airline
+Plug 'vim-airline/vim-airline'
+
+" Plugin       - vim-indent-guides
+" Repository   - https://github.com/nathanaelkane/vim-indent-guides
+Plug 'nathanaelkane/vim-indent-guides'
+
+" Plugin       - tabular
+" Repository   - https://github.com/godlygeek/tabular
+Plug 'godlygeek/tabular'
+
+" Plugin       - vim-markdown
+" Repository   - https://github.com/plasticboy/vim-markdown
+" Usage        - :MarkdownPreview
+"              - :MarkdownPreviewStop
+"              - :TableFormat
+Plug 'plasticboy/vim-markdown'
+
+" Plugin       - SingleCompile
+" Repository   - https://github.com/xuhdev/SingleCompile
+Plug 'xuhdev/SingleCompile'
+
+" Plugin       - tagbar
+" Repository   - https://github.com/majutsushi/tagbar
+" Requirements - ubuntu - sudo apt-get install ctags
+"              - mac    - brew install ctags
+Plug 'majutsushi/tagbar'
+
+" Plugin       - syntastic
+" Repository   - https://github.com/vim-syntastic/syntastic
+" Requirements - python - sudo pip3 install flake8
+"                js     - sudo npm install -g eslint
+" Usage        - :SyntasticInfo see syntastic's idea of available checkers
+Plug 'vim-syntastic/syntastic'
+
+" Plugin       - vim-autoformat
+" Repository   - https://github.com/Chiel92/vim-autoformat
+" Requirements - python           - sudo pip3 install autopep8
+"                js/css/html/json - sudo npm install -g js-beautify
+"                typescript       - sudo npm install -g typescript-formatter
+"                shell            - go get -u mvdan.cc/sh/cmd/shfmt
+"                sql              - pip3 install sqlparse
+Plug 'Chiel92/vim-autoformat'
+
+" Plugin       - vim-colorschemes
+" Repository   - https://github.com/flazz/vim-colorschemes
+Plug 'flazz/vim-colorschemes'
+
+" Plugin       - vim-css-color
+" Repository   - https://github.com/ap/vim-css-color
+Plug 'ap/vim-css-color'
+
+" Plugin       - dash.vim
+" Repository   - https://github.com/rizzatti/dash.vim
+Plug 'rizzatti/dash.vim'
+
+call plug#end()
+
+" basic
 syntax on
 filetype plugin indent on
 set number
@@ -10,7 +109,6 @@ set shiftwidth=4
 set tabstop=4
 set expandtab
 syntax enable
-colorscheme monokai
 set nobackup
 set backspace=indent,eol,start
 let mapleader = ","
@@ -18,75 +116,28 @@ set encoding=utf-8
 set wrap
 autocmd FileType html,xhtml,xml,css,javascript setlocal expandtab shiftwidth=2 tabstop=2
 
-" Plugin  - neocomplete
-" Install - git clone https://github.com/Shougo/neocomplete.vim.git ~/.vim/bundle/neocomplete.vim
-"         - ubuntu: sudo apt-get install vim-nox
-"         - mac: brew install macvim --with-lua --with-override-system-vim
-" Notice  - :set paste would disable neocomplete
-let g:neocomplete#enable_at_startup = 1
+" deoplete.nvim
+let g:deoplete#enable_at_startup = 1
 
-" Plugin  - Ack
-" Install - git clone https://github.com/mileszs/ack.vim.git ~/.vim/bundle/ack.vim
-"         - sudo apt-get install ack-grep
-" Usage   - :Ack [options] {pattern} [{directories}]
-" Doc     - https://beyondgrep.com/documentation/
-
-" Plugin  - NERDTree
-" Install - git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
+" nerdtree
 map <F3> :NERDTreeToggle<CR>
 
-" Plugin  - NERD Commenter
-" Install - git clone https://github.com/scrooloose/nerdcommenter.git ~/.vim/bundle/nerdcommenter
-" Usage   - :help nerdcommenter
-
-" Plugin  - ctrlp
-" Install - git clone https://github.com/kien/ctrlp.vim.git ~/.vim/bundle/ctrlp
-" Usage   - :CtrlP
-
-" Plugin  - vim-airline
-" Install - git clone https://github.com/vim-airline/vim-airline.git ~/.vim/bundle/vim-airline
-
-" Plugin  - Indent Guides
-" Install - git clone https://github.com/nathanaelkane/vim-indent-guides.git  ~/.vim/bundle/vim-indent-guides
+" vim-indent-guides
 let g:indent_guides_enable_on_vim_startup = 0
 
-" Plugin  - vim-go
-" Install - git clone https://github.com/fatih/vim-go.git  ~/.vim/bundle/vim-go
-"         - :GoInstallBinaries
-
-" Plugin  - jedi-vim
-" Install - git clone --recursive https://github.com/davidhalter/jedi-vim.git ~/.vim/bundle/jedi-vim
-autocmd FileType python setlocal omnifunc=jedi#completions
-let g:jedi#completions_enabled = 1
-let g:jedi#auto_vim_configuration = 1
-if !exists('g:neocomplete#force_omni_input_patterns')
-    let g:neocomplete#force_omni_input_patterns = {}
-endif
-let g:neocomplete#force_omni_input_patterns.python = '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
-
-" Plugin  - Vim Markdown
-" Install - git clone https://github.com/godlygeek/tabular.git ~/.vim/bundle/tabular
-" Install - git clone https://github.com/plasticboy/vim-markdown.git ~/.vim/bundle/vim-markdown
-" Usage   - :MarkdownPreview
-"         - :MarkdownPreviewStop
+" vim-markdown
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_json_frontmatter = 1
 let g:vim_markdown_conceal = 0
 
-" Plugin  - SingleCompile
-" Install - git clone https://github.com/xuhdev/SingleCompile.git ~/.vim/bundle/SingleCompile
+" SingleCompile
 map <F5> <ESC>:SCCompileRun<CR>
 
-" Plugin  - Tagbar
-" Install - git clone https://github.com/majutsushi/tagbar.git ~/.vim/bundle/tagbar
+" tagbar
 nmap <F8> :TagbarToggle<CR>
 
-" Plugin  - syntastic
-" Install - git clone https://github.com/vim-syntastic/syntastic.git ~/.vim/bundle/syntastic
-"         - python - sudo pip install flake8
-"         - js     - sudo npm install -g eslint
-" Usage   - :SyntasticInfo see syntastic's idea of available checkers
+" syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -95,20 +146,23 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['pep8']
+let g:syntastic_python_pep8_args = "--max-line-length=9999"
 let g:syntastic_go_checkers = ['gofmt']
 let g:syntastic_java_checkers = []
+let g:syntastic_html_checkers = ['eslint']
 
-" Plugin  - vim-autoformat
-" Install - git clone https://github.com/Chiel92/vim-autoformat.git ~/.vim/bundle/vim-autoformat
-"         - python           - sudo pip install yapf
-"         - js/css/html/json - sudo npm install -g js-beautify
-"         - typescript       - sudo npm install -g typescript-formatter
-"         - shell            - go get -u mvdan.cc/sh/cmd/shfmt
+" vim-autoformat
 au BufWrite * :Autoformat
 let g:autoformat_autoindent = 0
 let g:autoformat_retab = 0
 let g:autoformat_remove_trailing_spaces = 0
-let g:formatter_yapf_style = 'pep8'
+let g:formatters_python = ['autopep8']
+
+" vim-colorschemes
+colorscheme monokai
+
+" dash.vim
+map <C-d> <ESC>:Dash<CR>
 
 " replace space with tabs
 map <C-b> <ESC>:%s/\t/    /g<CR>
