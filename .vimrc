@@ -66,8 +66,8 @@ Plug 'xuhdev/SingleCompile'
 
 " Plugin       - tagbar
 " Repository   - https://github.com/majutsushi/tagbar
-" Requirements - ubuntu - sudo apt-get install ctags
-"              - mac    - brew install ctags
+" Requirements - ctags - ubuntu - sudo apt-get install ctags
+"                      - mac    - brew install ctags
 Plug 'majutsushi/tagbar'
 
 " Plugin       - syntastic
@@ -97,6 +97,23 @@ Plug 'ap/vim-css-color'
 " Plugin       - dash.vim
 " Repository   - https://github.com/rizzatti/dash.vim
 Plug 'rizzatti/dash.vim'
+
+" Plugin       - open-browser.vim
+" Repository   - https://github.com/tyru/open-browser.vim
+Plug 'tyru/open-browser.vim'
+
+" Plugin       - aklt/plantuml-syntax
+" Repository   - https://github.com/aklt/plantuml-syntax
+Plug 'aklt/plantuml-syntax'
+
+" Plugin       - weirongxu/plantuml-previewer.vim
+" Repository   - https://github.com/weirongxu/plantuml-previewer.vim
+" Requirements - java
+"              - graphviz - ubuntu - sudo apt-get install graphviz
+"                         - mac    - brew install graphviz
+" Usage        - :PlantumlOpen
+"              - :PlantumlSave [filepath] [format: png, svg, eps, pdf, vdx, xmi, scxml, html, txt, utxt, latex]
+Plug 'weirongxu/plantuml-previewer.vim'
 
 call plug#end()
 
