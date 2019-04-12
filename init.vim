@@ -74,6 +74,7 @@ Plug 'majutsushi/tagbar'
 " Repository   - https://github.com/vim-syntastic/syntastic
 " Requirements - python - sudo pip3 install flake8
 "                js     - sudo npm install -g eslint
+"                go     - go get -u github.com/golangci/golangci-lint/cmd/golangci-lint
 " Usage        - :SyntasticInfo see syntastic's idea of available checkers
 Plug 'vim-syntastic/syntastic'
 
@@ -164,7 +165,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['pep8']
 let g:syntastic_python_pep8_args = "--max-line-length=9999"
-let g:syntastic_go_checkers = ['gofmt']
+let g:syntastic_go_checkers = ['golangci_lint']
 let g:syntastic_java_checkers = []
 let g:syntastic_html_checkers = ['eslint']
 
