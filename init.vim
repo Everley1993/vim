@@ -11,8 +11,8 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 
 " Plugin       - deoplete-go
-" Repository   - https://github.com/zchee/deoplete-go
-Plug 'zchee/deoplete-go', { 'do': 'make'}
+" Repository   - https://github.com/deoplete-plugins/deoplete-go
+Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
 
 " Plugin       - deoplete-jedi
 " Repository   - https://github.com/zchee/deoplete-jedi
@@ -114,6 +114,11 @@ Plug 'aklt/plantuml-syntax'
 " Usage        - :PlantumlOpen
 "              - :PlantumlSave [filepath] [format: png, svg, eps, pdf, vdx, xmi, scxml, html, txt, utxt, latex]
 Plug 'weirongxu/plantuml-previewer.vim'
+
+" Plugin       - vim-vue
+" Repository   - https://github.com/posva/vim-vue
+" Requirements - npm i -g eslint eslint-plugin-vue
+Plug 'posva/vim-vue'
 
 call plug#end()
 
