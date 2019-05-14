@@ -136,7 +136,7 @@ set backspace=indent,eol,start
 let mapleader = ","
 set encoding=utf-8
 set wrap
-autocmd FileType html,xhtml,xml,css,javascript setlocal expandtab shiftwidth=2 tabstop=2
+autocmd FileType html,xhtml,xml,css,javascript,vue setlocal expandtab shiftwidth=2 tabstop=2
 
 " deoplete.nvim
 let g:deoplete#enable_at_startup = 1
