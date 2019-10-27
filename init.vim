@@ -141,6 +141,11 @@ autocmd FileType html,xhtml,xml,css,javascript,vue setlocal expandtab shiftwidth
 " deoplete.nvim
 let g:deoplete#enable_at_startup = 1
 
+" vim-go
+let g:go_metalinter_command = "golangci-lint"
+let g:go_metalinter_autosave = 1
+let g:go_list_type = 'quickfix'
+
 " nerdtree
 map <F3> :NERDTreeToggle<CR>
 
@@ -169,7 +174,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['pep8']
 let g:syntastic_python_pep8_args = "--max-line-length=9999"
-let g:syntastic_go_checkers = ['golangci_lint']
+let g:syntastic_go_checkers = ['go', 'gofmt', 'golint']
 let g:syntastic_go_go_build_args = '-o /dev/null'
 let g:syntastic_java_checkers = []
 let g:syntastic_html_checkers = ['eslint']
