@@ -174,7 +174,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['pep8']
 let g:syntastic_python_pep8_args = "--max-line-length=9999"
-let g:syntastic_go_checkers = ['go', 'gofmt', 'golint']
+let g:syntastic_go_checkers = ['go', 'gofmt']
 let g:syntastic_go_go_build_args = '-o /dev/null'
 let g:syntastic_java_checkers = []
 let g:syntastic_html_checkers = ['eslint']
