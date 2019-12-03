@@ -143,6 +143,7 @@ let g:deoplete#enable_at_startup = 1
 
 " vim-go
 let g:go_metalinter_command = "golangci-lint"
+let g:go_metalinter_enabled = ['deadcode', 'errcheck', 'gosimple', 'govet', 'ineffassign', 'staticcheck', 'structcheck', 'typecheck', 'unused', 'varcheck']
 let g:go_metalinter_autosave = 0
 let g:go_metalinter_deadline = "15s"
 let g:go_list_type = 'quickfix'
