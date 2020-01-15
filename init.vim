@@ -180,6 +180,7 @@ let g:syntastic_go_checkers = ['go', 'gofmt']
 let g:syntastic_go_go_build_args = '-o /dev/null'
 let g:syntastic_java_checkers = []
 let g:syntastic_html_checkers = ['eslint']
+let g:syntastic_javascript_checkers = ['eslint']
 
 " vim-autoformat
 au BufWrite * :Autoformat
