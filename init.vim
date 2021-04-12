@@ -22,7 +22,7 @@ Plug 'zchee/deoplete-jedi'
 " Plugin       - deoplete-ternjs
 " Repository   - https://github.com/carlitux/deoplete-ternjs
 " Requirements - sudo npm install -g tern
-Plug 'carlitux/deoplete-ternjs'
+" Plug 'carlitux/deoplete-ternjs'
 
 " Plugin       - ack
 " Repository   - https://github.com/mileszs/ack.vim
@@ -79,11 +79,11 @@ Plug 'vim-syntastic/syntastic'
 
 " Plugin       - vim-autoformat
 " Repository   - https://github.com/Chiel92/vim-autoformat
-" Requirements - python           - sudo pip3 install autopep8
-"                js/css/html/json - sudo npm install -g js-beautify
-"                typescript       - sudo npm install -g typescript-formatter
-"                shell            - go get -u mvdan.cc/sh/cmd/shfmt
-"                sql              - pip3 install sqlparse
+" Requirements - python                    - sudo pip3 install autopep8
+"                html/json                 - sudo npm install -g js-beautify
+"                javascript/typescript/css - sudo npm install -g prettier
+"                shell                     - go get -u mvdan.cc/sh/cmd/shfmt
+"                sql                       - pip3 install sqlparse
 Plug 'Chiel92/vim-autoformat'
 
 " Plugin       - vim-colorschemes
@@ -143,10 +143,14 @@ let g:deoplete#enable_at_startup = 1
 
 " vim-go
 let g:go_metalinter_command = "golangci-lint"
-let g:go_metalinter_enabled = ['deadcode', 'errcheck', 'gosimple', 'govet', 'ineffassign', 'staticcheck', 'structcheck', 'typecheck', 'unused', 'varcheck', 'golint']
-let g:go_metalinter_autosave = 1
+"let g:go_metalinter_autosave_enabled = ['deadcode', 'errcheck', 'gosimple', 'govet', 'ineffassign', 'staticcheck', 'structcheck', 'typecheck', 'unused', 'varcheck']
+let g:go_metalinter_enabled = ['vet', 'golint']
+let g:go_metalinter_autosave_enabled = ['vet', 'golint']
+let g:go_metalinter_autosave = 0
 let g:go_metalinter_deadline = "15s"
 let g:go_list_type = 'quickfix'
+let g:go_def_mode = 'gopls'
+let g:go_info_mode = 'gopls'
 
 " nerdtree
 map <F3> :NERDTreeToggle<CR>
@@ -188,6 +192,10 @@ let g:autoformat_autoindent = 0
 let g:autoformat_retab = 0
 let g:autoformat_remove_trailing_spaces = 0
 let g:formatters_python = ['autopep8']
+let g:formatters_javascript = ['prettier']
+let g:formatters_typescript = ['prettier']
+let g:formatters_css = ['prettier']
+" let g:formatters_html = []
 
 " vim-colorschemes
 colorscheme monokai
