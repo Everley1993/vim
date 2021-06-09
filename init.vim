@@ -12,7 +12,7 @@ Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 
 " Plugin       - deoplete-go
 " Repository   - https://github.com/deoplete-plugins/deoplete-go
-Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
+" Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
 
 " Plugin       - deoplete-jedi
 " Repository   - https://github.com/zchee/deoplete-jedi
