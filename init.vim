@@ -198,7 +198,7 @@ let g:formatters_css = ['prettier']
 " let g:formatters_html = []
 
 " vim-colorschemes
-colorscheme monokai
+colorscheme Monokai
 
 " dash.vim
 map <C-d> <ESC>:Dash<CR>
